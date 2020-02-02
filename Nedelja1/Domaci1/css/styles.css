@@ -24,7 +24,7 @@ header a{
     margin: 0 auto;
     text-align: center;
     color: white;
-    background-image: url(/images/city.jpg);
+    background-image: url(images/city.jpg);
     background-size: cover;
     width: 100%;
     padding: 80px 0;
