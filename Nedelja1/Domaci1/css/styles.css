@@ -1,0 +1,130 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.main{
+    display: flex;
+}
+
+header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+    margin: 4px;
+}
+
+#welcomeBlock{
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    background-image: url(/images/city.jpg);
+    background-size: cover;
+    width: 100%;
+    padding: 80px 0;
+    
+}
+
+#welcomeBlock img{
+    filter: brightness(20%);
+}
+
+#middleBlock{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#mBlockLeft{
+    flex-grow: 1;
+    text-align: center;
+    padding: 5%;
+}
+
+#mBlockLeft img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+#mBlockRight{
+    flex-grow: 1;
+    text-align: center;
+    padding: 5%;
+}
+
+#mBlockRight img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+#bottomBlock{
+    background-color: #6dc092;
+    color: white;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+input, label{
+    display: block;
+}
+
+input{
+
+background-color: #6dc092;
+border: 0.5px solid white;
+border-radius: 6px;
+color: #626262;
+padding: 10px 10px; 
+line-height: 1px;
+}
+
+
+.btn {
+	background-color:transparent;
+	border-radius:28px;
+	border:3px solid #6dc092;
+	display:inline-block;
+	cursor:pointer;
+	color: #6dc092;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:10px 60px;
+	text-decoration:none;
+	
+}
+.btn:hover {
+	background-color:transparent;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+#bottomBlock .btn{
+    border-color: white;
+    color: white;
+    margin: 2%;
+}
+
+#textArea{
+    background-color: #6dc092;
+    border-radius: 6px;
+    border-color: white;
+    border: 0.5px solid white;
+    color: #1d1f1d;
+    padding: 6px;
+}
