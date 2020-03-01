@@ -30,9 +30,10 @@ forma.addEventListener('submit', (e) => {
         amountDesc.value = '';
         amountInput.value = '';
     } else {
+        document.querySelectorAll("input-box").style.color='red'
         alert('Pogresan unos!')
     }
-    quickGlance.innerHTML=`Ukupan prihod:${x},<br>Ukupan rashod:${y}<br>Raspoloziv budzet:${z}`
+    quickGlance.innerHTML=`Ukupan prihod:${x}€,<br>Ukupan rashod:${y}€ pr:${y*100/x}%<br>Raspoloziv budzet:${z}€`
 })
 
 function addToHtml(totalElement, amountDesc, amountInput, selected) { //funkcija koja dodaje u html
@@ -47,9 +48,9 @@ function addToHtml(totalElement, amountDesc, amountInput, selected) { //funkcija
         x=totalPrihodi(totalAll);
         y=totalRashodi(totalAll);
         z=budget();
-        quickGlance.innerHTML=`Ukupan prihod:${x},<br>Ukupan rashod:${y}<br>Raspoloziv budzet:${z}`
+        quickGlance.innerHTML=`Ukupan prihod:${x}€,<br>Ukupan rashod:${y}€ pr:${y*100/x}%<br>Raspoloziv budzet:${z}€`
     })
-    listItem.innerHTML = `${amountDesc} +${amountInput}`;
+    listItem.innerHTML = `${amountDesc} =${amountInput}`;
   listItem.appendChild(btnRmv);
   if (selected=="income") {
       incomeList.appendChild(listItem);
@@ -99,4 +100,4 @@ function removeFromArry(arr) {
     totalAll.splice(totalAll.findIndex(function (i) {
         return i.id === arr.id;
     }), 1);
-}    
+}

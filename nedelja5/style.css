@@ -6,9 +6,15 @@ body{
 
 header{
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    justify-content: space-around;
     margin-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#quick-glance{
+    border: 3px solid red;
+    padding: 3px;
 }
 
 #input-container{
@@ -32,8 +38,18 @@ header{
 
 
 .procenat{
-    background-color: blue;
-    border-radius: 30%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #a12727;
+    border-radius: 30px;
+    background: #ff4a4a;
+    background: -moz-linear-gradient(top, #ff4a4a, #992727);
+    background: linear-gradient(to bottom, #ff4a4a, #992727);
+    font: normal normal bold 10px arial;
+    color: #ffffff;
+    text-decoration: none;
+    
 }
 
 #content{
@@ -49,14 +65,27 @@ header{
 
 .item-liste:hover .brisanje{
     display: inline-block;
+    border-radius: 30px;
 }
 
 #list-income{
-    display: flex;
+    background-color: greenyellow;
+    padding: 6px;
+    list-style-position: inside;
+}
+
+#list-income li{
     border: 1px solid green;
+    padding: 6px;
 }
 
 #list-expense{
-    display: flex;
+    background-color: rosybrown;
+    padding: 6px;
+    list-style-position: inside;
+}
+
+#list-expense li{
     border: 1px solid red;
+    padding: 6px;
 }
