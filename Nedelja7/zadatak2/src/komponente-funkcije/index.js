@@ -1,14 +1,12 @@
 import React from 'react'
+import Description from './description'
+import Emoji from './emoji/index'
 
 const Card = (props) => {
     return (
         <>
-            <div id='CardEmoji'>
-                <emoji>{props.emoji}</emoji>
-            </div>
-            <div id='CardDesc'>
-                <description>{props.description}</description>
-            </div>
+            <Description description={props.description}></Description>
+            <Emoji emoji={props.emoji}></Emoji>
         </>
 )
 }

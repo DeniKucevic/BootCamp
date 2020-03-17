@@ -1,15 +1,15 @@
 import React from 'react'
+import Description from './description_class';
+import Emoji from './emoji_class';
 
 class CardKlasa extends React.Component{
-    render() {
-    return  <>
-    <div id='CardEmoji'>
-        <emoji>{this.props.emoji}</emoji>
-    </div>
-    <div id='CardDesc'>
-        <description>{this.props.description}</description>
-    </div>
-</>
+    render(){
+        return (
+            <>
+            <Description description={this.props.description}/>
+            <Emoji emoji={this.props.emoji}/>
+            </>
+                );
     }
 }
 
