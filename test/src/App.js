@@ -2,32 +2,42 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import EmployeeList from './Components/Employee_list';
 import {getAllEmployers, putNewEmployee} from './Dummy_Api_Services/service';
+import Pages from './Components/Page';
 
 function App() {
 
   const [workers2, setWorkers] = useState([])
   const [pomocni, setPomocni] = useState([])
-  const [selector, setSelector] = useState(10)
+  let wrk = 10
   const [inputWorker, setInputWorker] = useState('')
   const [inputSalary, setInputSalary] = useState('')
-  const [workerAge,setWorkerAge] = useState('')
+  const [workerAge, setWorkerAge] = useState('')
+  const [page, setPage] = useState(1);
+  const [pages, setPages] = useState(1);
   
   useEffect(() => {
     getAllEmployers().then(res => {
       setWorkers(res.data.data);
-      setPomocni(res.data.data)
+      setPomocni(res.data.data);
+      setPages(getPages(res.data.data))
     })
   }, [])
 
+  const getPages=(arr, bug)=>{
+    return bug?Math.ceil(arr.length/bug):Math.ceil(arr.length/amount);
+  }
+
   const setingSelector = (e) => {
-    setSelector(e.target.value)
-    console.log(e.target.value);
-    
+     wrk=e.target.value
+  }
+
+  const handleWorker = () => {
+    setWorkers(pomocni.slice(0, wrk))
   }
 
   const handleInput1 = (e) => {
     setInputWorker(e.target.value)
-    console.log(inputWorker);
+    console.log(inputWorker)
   }
 
   const handleInput2 = (e) => {
@@ -47,8 +57,10 @@ function App() {
     }
   }
 
-  const handleWorkers = () => {
-    setWorkers(pomocni.slice(0, selector))
+  
+
+  const changePage = (e) => {
+   setPage(e.target.value);
   }
 
   return (
@@ -56,8 +68,8 @@ function App() {
       <div id='wrapper'>
         <div id='wrkrsprpage'>
           <h3>Odaberite broj radnika po stranici</h3>
-          <select onChange={(e) => { setingSelector(e); handleWorkers() }}>
-            <option>10</option>
+          <select onChange={(e) => { setingSelector(e); handleWorker(); }}>
+                <option>10</option>
                 <option>20</option>
                 <option>40</option>
           </select>
@@ -69,9 +81,12 @@ function App() {
               <input type='submit' value='Unesi'></input>
             </form>
           </div>
+          <div id='pages'>
+            <Pages changePage={changePage} numOfPages={pages}/>
+          </div>
         </div>
-          <div id='workers-container'>
-          <EmployeeList workers={workers2} />
+        <div id='workers-container'>
+        {workers2.slice(((page-1)*amount),(page*amount)).map(el=><EmployeeList employee = {el} key = {el.id}/>)}
         </div>
       </div>
     </div>
