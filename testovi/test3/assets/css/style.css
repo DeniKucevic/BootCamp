@@ -1,0 +1,20 @@
+/*type------------------------------------------*/
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.headHolder{
+  display: flex;
+  flex-direction: column;
+}
+
+.headHolder>h1{
+  font-size: 60px;
+  margin: 0px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.headHolder>p{
+  font-size: x-large;
+}
