@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { getStoryIds } from '../services/hackerNews';
-import { Story } from '../components/Story';
+import React, { useState, useEffect } from "react";
+import { getStoryIds } from "../services/hackerNews";
+import { Story } from "../components/Story";
 
 export const StoriesContainer = () => {
-  const [storyIds, setStoryIds] = useState([])
-  const [selector, setSelector] = useState(100)
+  const [storyIds, setStoryIds] = useState([]);
+  const [selector, setSelector] = useState(100);
 
   useEffect(() => {
-    getStoryIds().then(dunja => setStoryIds(dunja))
-  }, [])
-  
+    getStoryIds().then((dunja) => setStoryIds(dunja));
+  }, []);
+
   const setingSelector = (e) => {
-    setSelector(e.target.value)
+    setSelector(e.target.value);
     console.log(storyIds);
-  }
+  };
   // useEffect waits ...
 
   return (
-    <span id='container_titsto'>
-      <div id='container-title'>
-        <select onChange={(e)=>setingSelector(e)}>
+    <span id="container_titsto">
+      <div id="container-title">
+        <select onChange={(e) => setingSelector(e)}>
           <option>10</option>
           <option>20</option>
           <option>30</option>
@@ -27,12 +27,14 @@ export const StoriesContainer = () => {
           <option>60</option>
           <option>100</option>
         </select>
-      <h1>Welcome to</h1>
-      <h1>Hacker-News</h1> 
-    </div>
-    <div id='container-story'>
-        {storyIds.slice(0,selector).map(storyId => <Story storyId={storyId} key={storyId}/>)}
+        <h1>Welcome to</h1>
+        <h1>Hacker-News</h1>
+      </div>
+      <div id="container-story">
+        {storyIds.slice(0, selector).map((storyId) => (
+          <Story storyId={storyId} key={storyId} />
+        ))}
       </div>
     </span>
-  )
-}
+  );
+};

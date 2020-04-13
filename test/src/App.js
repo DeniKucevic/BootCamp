@@ -1,92 +1,115 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import EmployeeList from './Components/Employee_list';
-import {getAllEmployers, putNewEmployee} from './Dummy_Api_Services/service';
-import Pages from './Components/Page';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import EmployeeList from "./Components/Employee_list";
+import { getAllEmployers, putNewEmployee } from "./Dummy_Api_Services/service";
 
 function App() {
+  const [workers, setWorkers] = useState([]);
+  const [inputWorker, setInputWorker] = useState("");
+  const [inputSalary, setInputSalary] = useState("");
+  const [workerAge, setWorkerAge] = useState("");
+  const [perPage, setPerPage] = useState(5);
+  const [page, setPage] = useState(0);
 
-  const [workers2, setWorkers] = useState([])
-  const [pomocni, setPomocni] = useState([])
-  let wrk = 10
-  const [inputWorker, setInputWorker] = useState('')
-  const [inputSalary, setInputSalary] = useState('')
-  const [workerAge, setWorkerAge] = useState('')
-  const [page, setPage] = useState(1);
-  const [pages, setPages] = useState(1);
-  
   useEffect(() => {
-    getAllEmployers().then(res => {
+    getAllEmployers().then((res) => {
       setWorkers(res.data.data);
-      setPomocni(res.data.data);
-      setPages(getPages(res.data.data))
-    })
-  }, [])
+    });
+  }, []);
 
-  const getPages=(arr, bug)=>{
-    return bug?Math.ceil(arr.length/bug):Math.ceil(arr.length/amount);
-  }
+  const pageNumber = () => (workers.length - 1) / perPage;
+
+  const pages = (pageNumber) => {
+    let pages = [];
+    for (let i = 0; i < pageNumber; i++) {
+      pages.push(i);
+    }
+    return pages;
+  };
 
   const setingSelector = (e) => {
-     wrk=e.target.value
-  }
+    setPerPage(e.target.value);
+    console.log(perPage);
+  };
 
-  const handleWorker = () => {
-    setWorkers(pomocni.slice(0, wrk))
-  }
+  const handleWorker = () => {};
 
   const handleInput1 = (e) => {
-    setInputWorker(e.target.value)
-    console.log(inputWorker)
-  }
+    setInputWorker(e.target.value);
+  };
 
   const handleInput2 = (e) => {
-    setInputSalary(e.target.value)
-  }
+    setInputSalary(e.target.value);
+  };
 
   const handleInput3 = (e) => {
-    setWorkerAge(e.target.value)
-  }
+    setWorkerAge(e.target.value);
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if (inputWorker === '' || inputSalary === '') {
-      alert("unesite oba polja!")
+    e.preventDefault();
+    if (inputWorker === "" || inputSalary === "") {
+      alert("unesite sva polja!");
     } else {
-      putNewEmployee(inputWorker,inputSalary, workerAge).then(res => console.log(res))
+      putNewEmployee(inputWorker, inputSalary, workerAge).then((res) =>
+        alert("Uspesno ste dodali radnika: " + res.data.data.name)
+      );
     }
-  }
-
-  
-
-  const changePage = (e) => {
-   setPage(e.target.value);
-  }
+  };
 
   return (
     <div className="App">
-      <div id='wrapper'>
-        <div id='wrkrsprpage'>
+      <div id="wrapper">
+        <div id="wrkrsprpage">
           <h3>Odaberite broj radnika po stranici</h3>
-          <select onChange={(e) => { setingSelector(e); handleWorker(); }}>
-                <option>10</option>
-                <option>20</option>
-                <option>40</option>
+          <select
+            onChange={(e) => {
+              setingSelector(e);
+              handleWorker();
+            }}
+          >
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
           </select>
-          <div id='new-worker'>
-            <form onSubmit={e => (handleSubmit(e))}>
-              <input type='text' placeholder='Unesite radnika' onChange={e => (handleInput1(e))}></input>
-              <input type='text' placeholder='Unesite godine' onChange={e => (handleInput3(e)) }></input>
-              <input type='number' placeholder='Unesite platu' onChange={e => (handleInput2(e))}></input>
-              <input type='submit' value='Unesi'></input>
+          <div id="new-worker">
+            <form onSubmit={(e) => handleSubmit(e)}>
+              <input
+                type="text"
+                placeholder="Unesite radnika"
+                onChange={(e) => handleInput1(e)}
+              ></input>
+              <input
+                type="text"
+                placeholder="Unesite godine"
+                onChange={(e) => handleInput3(e)}
+              ></input>
+              <input
+                type="number"
+                placeholder="Unesite platu"
+                onChange={(e) => handleInput2(e)}
+              ></input>
+              <input type="submit" value="Unesi"></input>
             </form>
           </div>
-          <div id='pages'>
-            <Pages changePage={changePage} numOfPages={pages}/>
-          </div>
+          <div id="pages"></div>
         </div>
-        <div id='workers-container'>
-        {workers2.slice(((page-1)*amount),(page*amount)).map(el=><EmployeeList employee = {el} key = {el.id}/>)}
+        <hr></hr>
+        <hr></hr>
+        <div id="workers-container">
+          <EmployeeList workers={workers} page={page} perPage={perPage} />
+        </div>
+        <div>
+          {pages(pageNumber()).map((page) => (
+            <button
+              onClick={() => {
+                setPage(page);
+              }}
+              key={page}
+            >
+              {page + 1}
+            </button>
+          ))}
         </div>
       </div>
     </div>

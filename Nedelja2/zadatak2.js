@@ -1,5 +1,3 @@
-
-
 /*
 zadatak2.js - Продавница
 
@@ -13,8 +11,7 @@ zadatak2.js - Продавница
 let cena = 200;
 let novac = 200;
 if (cena <= novac) {
-    console.log('Uspesno ste kupili proizvod '+(novac-cena))
-    
+  console.log("Uspesno ste kupili proizvod " + (novac - cena));
 } else {
-    console.log('Nemate dovoljno novca '+novac)
+  console.log("Nemate dovoljno novca " + novac);
 }

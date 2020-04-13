@@ -1,13 +1,14 @@
-import React from 'react'
-import Employee from './Employee'
+import React from "react";
+import Employee from "./Employee";
 
-const EmployeeList = ({ workers }) => {
-    
-    return (
-        <div>
-            {workers.map(el => <Employee oneworker = {el} />)}
-        </div>
-    )
-}
+const EmployeeList = ({ workers, page, perPage }) => {
+  return (
+    <div>
+      {workers.slice(page * perPage, (page + 1) * perPage).map((el) => (
+        <Employee oneworker={el} key={el.id} />
+      ))}
+    </div>
+  );
+};
 
-export default EmployeeList
+export default EmployeeList;

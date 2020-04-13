@@ -1,13 +1,9 @@
-import React from 'react';
+import React from "react";
 
-class Emoji extends React.Component{
-        
-        render(){
-            return (
-                <p>{this.props.emoji}</p>
-                );
-            }
-        }
+class Emoji extends React.Component {
+  render() {
+    return <p>{this.props.emoji}</p>;
+  }
+}
 
-    
-export default Emoji
+export default Emoji;

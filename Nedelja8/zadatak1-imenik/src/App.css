@@ -13,14 +13,13 @@
 .Filtrirani {
   max-width: 300px;
   max-height: 300px;
-  overflow:hidden;
+  overflow: hidden;
   border: 1px solid black;
   flex-grow: 1;
 }
 
 .svikontakti {
   display: flex;
-
 }
 
 .sve {

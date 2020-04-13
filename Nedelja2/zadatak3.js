@@ -1,5 +1,3 @@
-
-
 /*zadatak3.js
 
 Направити променљиву која има вредност неког броја (цео број)
@@ -10,8 +8,7 @@
 
 let x = 7284728461846912638;
 if (x % 3 == 0) {
-    console.log('Broj ' + x + ' je deljiv sa 3');
-    
+  console.log("Broj " + x + " je deljiv sa 3");
 } else {
-    console.log('Broj ' + x + ' nije deljiv sa 3');
+  console.log("Broj " + x + " nije deljiv sa 3");
 }

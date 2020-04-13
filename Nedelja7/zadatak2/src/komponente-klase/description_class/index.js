@@ -1,12 +1,9 @@
-import React from 'react';
+import React from "react";
 
-class Description extends React.Component{
-    
-    render(){
-        return (
-            <p>{this.props.description}</p>
-            );
-    }
+class Description extends React.Component {
+  render() {
+    return <p>{this.props.description}</p>;
+  }
 }
 
-export default Description
+export default Description;

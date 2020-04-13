@@ -1,91 +1,81 @@
-body{
-    margin: 0px;
-    padding: 0px;
-    background-image: url("pozadinaBody.jpg");
+body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url("pozadinaBody.jpg");
 }
 
-header{
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-#quick-glance{
-    border: 3px solid red;
-    padding: 3px;
+#quick-glance {
+  border: 3px solid red;
+  padding: 3px;
 }
 
-#input-container{
-    display: flex;
-    justify-content: center;
+#input-container {
+  display: flex;
+  justify-content: center;
 }
 
-#lists-constainer{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 100px;
+#lists-constainer {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 100px;
 }
 
-#income-list-container{
-    
+.procenat {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #a12727;
+  border-radius: 30px;
+  background: #ff4a4a;
+  background: -moz-linear-gradient(top, #ff4a4a, #992727);
+  background: linear-gradient(to bottom, #ff4a4a, #992727);
+  font: normal normal bold 10px arial;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-#expense-list-container{
+#content {
+  height: 100vh;
+  width: 1000px;
+  margin: auto;
+  background-color: white;
 }
 
-
-
-.procenat{
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    border: 1px solid #a12727;
-    border-radius: 30px;
-    background: #ff4a4a;
-    background: -moz-linear-gradient(top, #ff4a4a, #992727);
-    background: linear-gradient(to bottom, #ff4a4a, #992727);
-    font: normal normal bold 10px arial;
-    color: #ffffff;
-    text-decoration: none;
-    
+.brisanje {
+  display: none;
 }
 
-#content{
-    height: 100vh;
-    width: 1000px;
-    margin: auto;
-    background-color: white;
+.item-liste:hover .brisanje {
+  display: inline-block;
+  border-radius: 30px;
 }
 
-.brisanje{
-    display: none;
+#list-income {
+  background-color: greenyellow;
+  padding: 6px;
+  list-style-position: inside;
 }
 
-.item-liste:hover .brisanje{
-    display: inline-block;
-    border-radius: 30px;
+#list-income li {
+  border: 1px solid green;
+  padding: 6px;
 }
 
-#list-income{
-    background-color: greenyellow;
-    padding: 6px;
-    list-style-position: inside;
+#list-expense {
+  background-color: rosybrown;
+  padding: 6px;
+  list-style-position: inside;
 }
 
-#list-income li{
-    border: 1px solid green;
-    padding: 6px;
-}
-
-#list-expense{
-    background-color: rosybrown;
-    padding: 6px;
-    list-style-position: inside;
-}
-
-#list-expense li{
-    border: 1px solid red;
-    padding: 6px;
+#list-expense li {
+  border: 1px solid red;
+  padding: 6px;
 }

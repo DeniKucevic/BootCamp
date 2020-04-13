@@ -1,69 +1,69 @@
 .one_story {
-    border: 1px solid black;
-    border-radius: 30px;
-    background-color: #E0E0FB;
-    display: flex;
-    max-width: 1000px;
-    align-items: center;
-    flex-direction: column;
-    margin: 30px;
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: #e0e0fb;
+  display: flex;
+  max-width: 1000px;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
 }
 
-body{
-    background-color: #8A8AEF;
+body {
+  background-color: #8a8aef;
 }
 
 #root {
-    max-width: 1500px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 0px auto;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+  max-width: 1500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0px auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
-.item{
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-    color: #151599;
-    font-weight: bolder;
+.item {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  color: #151599;
+  font-weight: bolder;
 }
 
 #naslov {
-    margin: 20px;
-    color: #090934;
-    font-weight: 100;
+  margin: 20px;
+  color: #090934;
+  font-weight: 100;
 }
 
-a{
-    color: #090934;
+a {
+  color: #090934;
 }
 
 a:link {
-    text-decoration: none;
-    color: #090934;
-  }
+  text-decoration: none;
+  color: #090934;
+}
 
 a:hover {
-     text-decoration: underline;
-     color: #090934;
+  text-decoration: underline;
+  color: #090934;
 }
 
 #container-story {
-    border: solid black 1px;
-    width: auto;
+  border: solid black 1px;
+  width: auto;
 }
 
-#container_titsto{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-wrap: nowrap;
-    align-items: center;
+#container_titsto {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  align-items: center;
 }
-#container-title{
-    justify-content: center;
+#container-title {
+  justify-content: center;
 }

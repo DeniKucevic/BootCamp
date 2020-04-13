@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const Forma = ({string}) => {
-    return (
+const Forma = ({ string }) => {
+  return (
     <div>
-    <input type='text'></input>
-    <button>{string}</button>
+      <input type="text"></input>
+      <button>{string}</button>
     </div>
-)
-}
+  );
+};
 
-export default Forma
+export default Forma;
